@@ -30,19 +30,28 @@ function StudentList({ students, setStudents }) {
 
   return (
     <div className="panel">
-      <h2>학생 명단 관리</h2>
+      <h2>
+        <span className="material-symbols-outlined">manage_accounts</span>
+        학생 명단 관리
+      </h2>
       
-      <textarea 
-        rows="3" 
-        placeholder="학생 이름을 입력하세요. 여러 명일 경우 줄바꿈이나 쉼표로 구분하세요."
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-      />
+      <div className="text-field-container">
+        <textarea 
+          rows="3" 
+          placeholder="학생 이름을 입력하세요. 여러 명일 경우 줄바꿈이나 쉼표로 구분하세요."
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+      </div>
       
       <div className="controls" style={{ marginBottom: '20px' }}>
-        <button onClick={handleAdd}>추가하기</button>
+        <button className="btn-filled" onClick={handleAdd}>
+          <span className="material-symbols-outlined">person_add</span>
+          추가하기
+        </button>
         {students.length > 0 && (
-          <button onClick={handleClearAll} style={{ backgroundColor: '#555', boxShadow: '0 8px 0 #333' }}>
+          <button onClick={handleClearAll} className="btn-error">
+            <span className="material-symbols-outlined">delete_sweep</span>
             모두 삭제
           </button>
         )}
@@ -53,7 +62,7 @@ function StudentList({ students, setStudents }) {
           <div key={index} className="student-tag">
             {student}
             <button onClick={() => handleRemove(student)} aria-label={`${student} 삭제`}>
-              ×
+              <span className="material-symbols-outlined">cancel</span>
             </button>
           </div>
         ))}

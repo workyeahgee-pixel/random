@@ -73,28 +73,43 @@ function App() {
         />
       )}
 
-      <h1 data-text="랜덤 발표자 뽑기">랜덤 발표자 뽑기</h1>
+      <header className="app-header">
+        <div className="app-header-icon">
+          <span className="material-symbols-outlined">casino</span>
+        </div>
+        <div className="app-header-text">
+          <h1>랜덤 발표자 뽑기</h1>
+          <p className="app-header-subtitle">발표자를 공정하고 실공없이 추첨하세요</p>
+        </div>
+      </header>
 
       {!isDrawing ? (
         <>
           <StudentList students={students} setStudents={setStudents} />
           
           <div className="panel" style={{ marginTop: '20px', textAlign: 'center' }}>
-            <h2 style={{ color: 'var(--text-color)' }}>몇 명을 뽑을까요?</h2>
-            <input 
+            <h2>
+              <span className="material-symbols-outlined">group</span>
+              몇 명을 뽑을까요?
+            </h2>
+            <div className="text-field-container" style={{ width: '150px', margin: '0 auto 16px' }}>
+              <input 
               type="number" 
               min="1" 
-              max={Math.max(1, students.length)}
-              value={drawCount} 
-              onChange={(e) => setDrawCount(parseInt(e.target.value) || 1)}
-              style={{ width: '150px', fontSize: '2rem', textAlign: 'center', height: '60px' }}
-            />
+                max={Math.max(1, students.length)}
+                value={drawCount} 
+                onChange={(e) => setDrawCount(parseInt(e.target.value) || 1)}
+                style={{ fontSize: '24px', textAlign: 'center' }}
+              />
+            </div>
             <br />
             <button 
+              className="btn-filled"
               onClick={startDraw} 
               disabled={students.length === 0}
-              style={{ fontSize: '2.5rem', padding: '20px 60px', marginTop: '20px' }}
+              style={{ marginTop: '8px' }}
             >
+              <span className="material-symbols-outlined">play_arrow</span>
               추첨 시작!
             </button>
           </div>
@@ -107,7 +122,8 @@ function App() {
             onComplete={() => {}} 
           />
           <div style={{ textAlign: 'center', marginTop: '30px' }}>
-            <button onClick={() => setIsDrawing(false)} style={{ fontSize: '2rem', padding: '15px 40px' }}>
+            <button onClick={() => setIsDrawing(false)} className="btn-outline">
+              <span className="material-symbols-outlined">arrow_back</span>
               돌아가기
             </button>
           </div>

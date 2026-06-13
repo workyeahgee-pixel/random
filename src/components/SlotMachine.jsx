@@ -30,7 +30,7 @@ function SingleSlot({ students, targetResult, startSpin }) {
       <div 
         className="slot-inner" 
         style={{ 
-          transform: spinning ? `translateY(-${(list.length - 1) * 280}px)` : `translateY(0px)`,
+          transform: spinning ? `translateY(-${(list.length - 1) * 296}px)` : `translateY(0px)`,
           transition: spinning ? 'transform 3s cubic-bezier(0.15, 0.85, 0.35, 1)' : 'none'
         }}
       >
@@ -75,7 +75,7 @@ function SlotMachine({ students, targetResults, onComplete }) {
       </div>
       {completed && (
         <div style={{ marginTop: '20px', animation: 'fadeIn 0.5s ease' }}>
-          <h1 data-text="당첨!">
+          <h1>
             당첨!
           </h1>
         </div>
