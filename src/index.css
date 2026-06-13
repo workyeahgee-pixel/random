@@ -42,11 +42,23 @@ h1, h2, h3 {
   letter-spacing: 2px;
 }
 
+@keyframes bounceTitle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(-2deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-8px) rotate(2deg); }
+}
+
 h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   color: var(--secondary-color);
-  text-shadow: 4px 4px 0 var(--primary-color);
+  text-shadow: none;
+  -webkit-text-stroke: 3px #ffffff;
   margin-bottom: 30px;
+  display: inline-block;
+  align-self: center;
+  animation: bounceTitle 2s ease-in-out infinite;
+  letter-spacing: 4px;
 }
 
 h2 {
@@ -130,6 +142,7 @@ input, textarea {
 
 .slot-item {
   height: 280px; /* slot height minus borders roughly */
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,6 +152,7 @@ input, textarea {
   text-align: center;
   padding: 20px;
   word-break: keep-all;
+  overflow: hidden;
 }
 
 .controls {
