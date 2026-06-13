@@ -42,23 +42,29 @@ h1, h2, h3 {
   letter-spacing: 2px;
 }
 
-@keyframes bounceTitle {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-8px) rotate(-2deg); }
-  50% { transform: translateY(0) rotate(0deg); }
-  75% { transform: translateY(-8px) rotate(2deg); }
-}
-
 h1 {
-  font-size: 4rem;
-  color: var(--secondary-color);
-  text-shadow: none;
-  -webkit-text-stroke: 3px #ffffff;
+  position: relative;
+  font-size: 4.5rem;
+  color: #ff85b3; /* 뽀용하고 귀여운 핑크색 */
   margin-bottom: 30px;
   display: inline-block;
   align-self: center;
-  animation: bounceTitle 2s ease-in-out infinite;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  z-index: 1;
+  -webkit-text-stroke: 3px #000; /* 안쪽 윤곽선 */
+  text-shadow: none;
+  animation: none; /* 움직이지 않게 설정 */
+}
+
+h1::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-text-stroke: 18px #000; /* 아주 두꺼운 바깥쪽 윤곽선 */
+  text-shadow: none;
 }
 
 h2 {

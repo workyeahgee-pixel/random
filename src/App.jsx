@@ -60,7 +60,7 @@ function App() {
     setIsDrawing(true);
   };
 
-  return (
+    return (
     <>
       <div className="secret-trigger" onClick={handleSecretClick} aria-hidden="true" title="비밀 영역" />
       
@@ -73,7 +73,7 @@ function App() {
         />
       )}
 
-      <h1>랜덤 발표자 뽑기</h1>
+      <h1 data-text="랜덤 발표자 뽑기">랜덤 발표자 뽑기</h1>
 
       {!isDrawing ? (
         <>

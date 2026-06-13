@@ -75,7 +75,7 @@ function SlotMachine({ students, targetResults, onComplete }) {
       </div>
       {completed && (
         <div style={{ marginTop: '20px', animation: 'fadeIn 0.5s ease' }}>
-          <h1 style={{ color: 'var(--primary-color)', fontSize: '4rem', textShadow: 'none' }}>
+          <h1 data-text="당첨!">
             당첨!
           </h1>
         </div>
