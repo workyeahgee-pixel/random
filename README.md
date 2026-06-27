@@ -1,16 +1,20 @@
-# React + Vite
+# 랜덤 발표자 추출 웹앱 (Vercel 배포)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**배포 도메인:** [https://random-lqgdb42pa-finf-s-projects.vercel.app/](https://random-lqgdb42pa-finf-s-projects.vercel.app/)
 
-Currently, two official plugins are available:
+초등학교 지체장애 특수학생을 위한 랜덤 발표자 추출 웹페이지입니다.
+데이터는 브라우저 로컬 스토리지에만 저장되어 외부로 유출되지 않으며 안전하게 사용할 수 있습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ 주요 기능
+- **발표자 랜덤 추첨:** 슬롯머신처럼 재미있게 발표자를 뽑을 수 있습니다.
+- **학생 명단 추가:** 콤마(,)로 여러 명을 한 번에 추가하거나 삭제할 수 있습니다.
+- **비밀 제어 기능:** 교사가 몰래 특정 학생이 무조건 당첨되도록 조작할 수 있습니다. (화면 우측 하단 투명 영역 5번 클릭)
+- **윤리 게이트웨이 및 약관:** 생성형 AI 윤리 핵심가이드 동의 절차와 이용약관, 개인정보처리방침이 포함되어 있습니다.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 로컬 실행 방법
+```bash
+npm install
+npm run dev
+```
