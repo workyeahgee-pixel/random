@@ -3,6 +3,7 @@ import StudentList from './components/StudentList';
 import SlotMachine from './components/SlotMachine';
 import SecretMenu from './components/SecretMenu';
 import EthicsGateway from './components/EthicsGateway';
+import Footer from './components/Footer';
 import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
@@ -135,6 +136,7 @@ function App() {
           </div>
         </>
       )}
+      <Footer />
     </>
   );
 }
