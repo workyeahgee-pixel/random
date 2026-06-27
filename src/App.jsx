@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import StudentList from './components/StudentList';
 import SlotMachine from './components/SlotMachine';
 import SecretMenu from './components/SecretMenu';
+import EthicsGateway from './components/EthicsGateway';
 import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
+  const [hasAgreedToEthics, setHasAgreedToEthics] = useLocalStorage('ethics_agreed', false);
   const [students, setStudents] = useLocalStorage('presenter_students', []);
   const [secretTarget, setSecretTarget] = useLocalStorage('presenter_secret', null);
   
@@ -59,6 +61,10 @@ function App() {
     setResults(drawn);
     setIsDrawing(true);
   };
+
+  if (!hasAgreedToEthics) {
+    return <EthicsGateway onAgree={() => setHasAgreedToEthics(true)} />;
+  }
 
     return (
     <>
